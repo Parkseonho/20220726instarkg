@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 public class QuestionForm {
-    @NotEmpty(message = "제목 입력 必")
+    @NotEmpty(message = "이미지 삽입 必")
     @Size(max = 200)
     private String subject;
 
