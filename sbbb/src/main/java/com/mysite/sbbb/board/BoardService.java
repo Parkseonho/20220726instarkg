@@ -42,7 +42,19 @@ public class BoardService {
 
         board.setCreateDate(LocalDateTime.now());
 
+        board.setReplyLike(false);
+
         boardRepository.save(board);
+    }
+
+    public void setLike(Integer id){
+        Board board = boardRepository.findById(id).get();
+        if(board.getReplyLike()==true){
+            board.setReplyLike(false);
+        }else {
+            board.setReplyLike(true);
+        }
+        this.boardRepository.save(board);
     }
 
     public List<Board> getList(){

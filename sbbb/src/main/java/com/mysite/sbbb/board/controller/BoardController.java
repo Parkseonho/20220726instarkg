@@ -41,4 +41,10 @@ public class BoardController {
         model.addAttribute("board", board);
         return "user/board_detail";
     }
+
+    @PostMapping("/like/{id}")
+    public String createBoard(@PathVariable("id") Integer id){
+        this.boardService.setLike(id);
+        return String.format("redirect:/board/list");
+    }
 }

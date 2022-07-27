@@ -23,4 +23,19 @@ public class Board {
 
     @Column(columnDefinition = "integer default 0", nullable = false)
     private Integer hit;
+
+    private Boolean replyLike;
+
+    @Converter
+    class BooleanToYNConverter implements AttributeConverter<Boolean, String>{
+        @Override
+        public String convertToDatabaseColumn(Boolean attribute){
+            return (attribute != null&& attribute) ? "Y" : "N";
+        }
+
+        @Override
+        public Boolean convertToEntityAttribute(String dbData){
+            return "Y".equals(dbData);
+        }
+    }
 }

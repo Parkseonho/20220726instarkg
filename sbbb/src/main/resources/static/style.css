@@ -42,6 +42,10 @@ text-align : center;
 .imgSize{
 width:300px;
 }
+.likeSize{
+width:20px;
+height : 20px;
+}
 .layoutMargin{
 margin:100px auto;
 }

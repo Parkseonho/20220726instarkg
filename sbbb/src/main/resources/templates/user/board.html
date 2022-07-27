@@ -10,6 +10,11 @@
 
         <div class="kglistMargin" th:each="board, loop : ${paging}">
                 <img class="imgSize" th:src="${board.filepath}">
+            <div>
+                <form th:action="@{|/board/like/${board.id}|}" method="post">
+                    <button th:classappend="${board.replyLike}? 'text-white bg-danger': '' " class="border-0" th:text="좋아요" type = "submit"></button>
+                </form>
+            </div>
                 <div  th:text="${board.content}" ></div>
                 <div  th:text="${#temporals.format(board.createDate, 'M월 d일')}"></div>
            <!-- <td th:text="${board.hit}"></td>-->
