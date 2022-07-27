@@ -3,7 +3,6 @@
     <h5 class="my-3 border-bottom pb-2">게시글 등록</h5>
     <form th:action="@{/board/page}"  method="post" enctype="multipart/form-data" >
         <div class="mb-3">
-            <input name="title" type="text" placeholder="제목" class="form-control">
             <textarea name="content" class="form-control" placeholder="내용"></textarea>
             <input type="file" class="form-control" name="file">
         </div>

@@ -10,7 +10,7 @@
 
         <div th:each="board, loop : ${paging}">
 
-                <img src="/${board.filepath}">
+                <img class="imgSize" th:src="${board.filepath}">
 
                 <div  th:text="${board.content}" ></div>
                 <div  th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd')}"></div>

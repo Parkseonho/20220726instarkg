@@ -40,7 +40,9 @@ text-align : center;
 }
 
 .imgSize{
-width:30px;
-height:30px;
+height:500px;
+}
+.layoutMargin{
+margin:100px auto;
 }
 
