@@ -40,9 +40,12 @@ text-align : center;
 }
 
 .imgSize{
-height:500px;
+width:300px;
 }
 .layoutMargin{
 margin:100px auto;
+}
+.kglistMargin{
+padding : 20px 0px;
 }
 

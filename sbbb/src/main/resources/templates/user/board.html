@@ -8,13 +8,10 @@
     </h2>
 
 
-        <div th:each="board, loop : ${paging}">
-
+        <div class="kglistMargin" th:each="board, loop : ${paging}">
                 <img class="imgSize" th:src="${board.filepath}">
-
                 <div  th:text="${board.content}" ></div>
-                <div  th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd')}"></div>
-
+                <div  th:text="${#temporals.format(board.createDate, 'M월 d일')}"></div>
            <!-- <td th:text="${board.hit}"></td>-->
 
         </div>
