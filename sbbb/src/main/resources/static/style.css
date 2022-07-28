@@ -53,3 +53,17 @@ margin:100px auto;
 padding : 20px 0px;
 }
 
+.like{
+background :url("./like/like.png") no-repeat;
+border : none;
+cursor : pointer;
+}
+
+.unlike{
+background :url("./like/unlike.png") no-repeat;
+border : none;
+cursor : pointer;
+
+}
+
+

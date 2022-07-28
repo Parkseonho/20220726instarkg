@@ -12,7 +12,7 @@
                 <img class="imgSize" th:src="${board.filepath}">
             <div>
                 <form th:action="@{|/board/like/${board.id}|}" method="post">
-                    <button th:classappend="${board.replyLike}? 'text-white bg-danger': '' " class="border-0" th:text="좋아요" type = "submit"></button>
+                    <button th:classappend="${board.replyLike}? 'text-white like': 'text-white unlike' " class="border-0" th:text="__" type = "submit"></button>
                 </form>
             </div>
                 <div  th:text="${board.content}" ></div>
