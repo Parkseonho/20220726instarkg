@@ -46,6 +46,12 @@ width:300px;
 width:20px;
 height : 20px;
 }
+
+.anwerSize{
+width:20px;
+height : 20px;
+margin-bottom:5px;
+}
 .layoutMargin{
 margin:100px auto;
 }
@@ -66,4 +72,6 @@ cursor : pointer;
 
 }
 
-
+.InstarDisplayInline{
+display : inline;
+}
