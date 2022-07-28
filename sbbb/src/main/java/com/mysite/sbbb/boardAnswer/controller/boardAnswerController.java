@@ -2,20 +2,17 @@ package com.mysite.sbbb.boardAnswer.controller;
 
 import com.mysite.sbbb.board.BoardService;
 import com.mysite.sbbb.board.domain.Board;
-import com.mysite.sbbb.boardAnswer.boardAnswerForm;
 import com.mysite.sbbb.boardAnswer.boardAnswerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.Valid;
 
-
-@RequestMapping("/board")
+@RequestMapping("/boardAnswer")
 @RequiredArgsConstructor
 @Controller
 public class boardAnswerController {
@@ -23,13 +20,9 @@ public class boardAnswerController {
     private final boardAnswerService boardAnswerService;
 
     @PostMapping("/create/{id}")
-    public String createBoardAnswer(Model model, @PathVariable("id") Integer id, @Valid boardAnswerForm boardAnswerForm, BindingResult bindingResult){
+    public String createBoardAnswer(Model model, @PathVariable("id") Integer id, @RequestParam String content){
         Board board = this.boardService.getBoard(id);
-        if(bindingResult.hasErrors()){
-            model.addAttribute("board", board);
-            return "user/board_detail";
-        }
-        this.boardAnswerService.create(board, boardAnswerForm.getContent());
+        this.boardAnswerService.create(board, content);
         return String.format("redirect:/board/detail/%s", id);
     }
 

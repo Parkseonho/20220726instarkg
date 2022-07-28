@@ -14,7 +14,7 @@
                 <form  class="InstarDisplayInline" th:action="@{|/board/like/${board.id}|}" method="post">
                     <button th:classappend="${board.replyLike}? 'text-white like': 'text-white unlike' " class="border-0" th:text="_." type = "submit"></button>
                 </form>
-                <a class="InstarDisplayInline" th:href="@{|/question/detail/1|}" ><img class="anwerSize" src="https://cdn-icons.flaticon.com/png/512/3667/premium/3667893.png?token=exp=1658975839~hmac=27ea7761b5a7e37aea807888b8b3fee5"></a>
+                <a class="InstarDisplayInline" th:href="@{|/board/detail/1|}" ><img class="anwerSize" src="https://cdn-icons.flaticon.com/png/512/3667/premium/3667893.png?token=exp=1658975839~hmac=27ea7761b5a7e37aea807888b8b3fee5"></a>
             </div>
                 <div  th:text="${board.content}" ></div>
                 <div  th:text="${#temporals.format(board.createDate, 'M월 d일')}"></div>

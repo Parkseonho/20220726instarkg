@@ -18,7 +18,6 @@ public class boardAnswerService {
         boardAnswer.setContent(content);
         boardAnswer.setCreateDate(LocalDateTime.now());
         boardAnswer.setBoard(board);
-        boardAnswer.setReplyLike(false);
         this.boardAnswerRepository.save(boardAnswer);
     }
 

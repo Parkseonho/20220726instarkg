@@ -1,6 +1,5 @@
 package com.mysite.sbbb.board;
 
-import com.mysite.sbbb.DataNotFoundException;
 import com.mysite.sbbb.board.dao.BoardRepository;
 import com.mysite.sbbb.board.domain.Board;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,11 +68,8 @@ public class BoardService {
     }
     public Board getBoard(Integer id) {
         Optional<Board> board = this.boardRepository.findById(id);
-        if(board.isPresent()){
             return board.get();
-        }else {
-            throw new DataNotFoundException("board not found");
-        }
+
     }
 
      public void updateHit(Integer id) {
